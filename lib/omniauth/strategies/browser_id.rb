@@ -33,7 +33,7 @@ module OmniAuth
             <script src="https://browserid.org/include.js" type="text/javascript"></script>
             <script type='text/javascript'>
               function loginViaEmail() {
-                navigator.id.getVerifiedEmail(function(assertion) {
+                navigator.id.get(function(assertion) {
                   if (assertion) {
                     $('input[name=assertion]').val(assertion);
                     $('form').submit();
