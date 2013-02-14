@@ -1,6 +1,6 @@
 # OmniAuth BrowserID
 
-Mozilla's [BrowserID](https://browserid.org/) is a great implementation of verified email that lets you quickly and easily login to websites. This is an OmniAuth strategy that allows you to use BrowserID in your application!
+Mozilla's [BrowserID](https://login.persona.org/) is a great implementation of verified email that lets you quickly and easily login to websites. This is an OmniAuth strategy that allows you to use BrowserID in your application!
 
 ## Installation
 
@@ -30,7 +30,7 @@ To better integrate BrowserID with your application, you will want to use the Br
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="https://browserid.org/include.js" type="text/javascript"></script>
+    <script src="https://login.persona.org/include.js" type="text/javascript"></script>
     <script type='text/javascript'>
       function loginViaEmail() {
         navigator.id.get(function(assertion) {
@@ -66,7 +66,7 @@ What this does is sets up a form with a "Login with BrowserID" button. When the 
 
 These are the options you can specify that are relevant to Omniauth BrowserID:
 
-* `:verify_url` - The verifier URL (defaults to `https://browserid.org/verify`)
+* `:verify_url` - The verifier URL (defaults to `https://verifier.login.persona.org/verify`)
 * `:name` - The URL at which the strategy will be available (defaults to `browser_id`)
 * `:audience_url` - The host of your site. Defaults to the `full_host` of OmniAuth (either automatically determined or determined by the `OmniAuth.config.full_host` option)
 

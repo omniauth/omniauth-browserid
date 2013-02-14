@@ -8,7 +8,7 @@ module OmniAuth
     class BrowserID
       include OmniAuth::Strategy
 
-      option :verify_url, 'https://browserid.org/verify'
+      option :verify_url, 'https://verifier.login.persona.org/verify'
       option :name, 'browser_id'
       option :audience_url, nil
 
@@ -30,7 +30,7 @@ module OmniAuth
           :url => callback_path,
           :header_info => <<-HTML
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-            <script src="https://browserid.org/include.js" type="text/javascript"></script>
+            <script src="https://login.persona.org/include.js" type="text/javascript"></script>
             <script type='text/javascript'>
               function loginViaEmail() {
                 navigator.id.get(function(assertion) {
