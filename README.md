@@ -28,7 +28,12 @@ To better integrate BrowserID with your application, you will want to use the Br
 
 ```html
 <html>
-  <head>
+  <body>
+    <form id='browser_id_form' action='/auth/browser_id/callback'>
+      <input type='hidden' name='assertion'/>
+      <button type='submit'>Login with BrowserID</button>
+    </form>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://browserid.org/include.js" type="text/javascript"></script>
     <script type='text/javascript'>
@@ -50,12 +55,6 @@ To better integrate BrowserID with your application, you will want to use the Br
         });
       });
     </script>
-  </head>
-  <body>
-    <form id='browser_id_form' action='/auth/browser_id/callback'>
-      <input type='hidden' name='assertion'/>
-      <button type='submit'>Login with BrowserID</button>
-    </form>
   </body>
 </html>
 ```
