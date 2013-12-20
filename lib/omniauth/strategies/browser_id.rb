@@ -11,6 +11,7 @@ module OmniAuth
       option :verify_url, 'https://verifier.login.persona.org/verify'
       option :name, 'browser_id'
       option :audience_url, nil
+      option :client_options, {}
 
       def other_phase
         if on_path?(failure_path)
@@ -40,7 +41,7 @@ module OmniAuth
                   } else {
                     window.location = "#{failure_path}"
                   }
-                });  
+                });
               }
 
               $(function() {
@@ -67,7 +68,7 @@ module OmniAuth
       end
 
       def raw_info
-        response = connection.post('', 
+        response = connection.post('',
           :assertion => request.params['assertion'],
           :audience => full_host
         )
@@ -76,7 +77,8 @@ module OmniAuth
       end
 
       def connection
-        resp = Faraday.new(:url => options[:verify_url])
+        Faraday.new(options[:client_options].
+          update(:url => options[:verify_url]))
       end
     end
   end

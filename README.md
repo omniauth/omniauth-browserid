@@ -45,7 +45,7 @@ To better integrate BrowserID with your application, you will want to use the Br
           } else {
             window.location = "#{failure_path}"
           }
-        });  
+        });
       }
 
       $(function() {
@@ -68,6 +68,7 @@ These are the options you can specify that are relevant to Omniauth BrowserID:
 * `:verify_url` - The verifier URL (defaults to `https://verifier.login.persona.org/verify`)
 * `:name` - The URL at which the strategy will be available (defaults to `browser_id`)
 * `:audience_url` - The host of your site. Defaults to the `full_host` of OmniAuth (either automatically determined or determined by the `OmniAuth.config.full_host` option)
+* `:client_options` - Any additional options to send to the Faraday connection.
 
 ## License
 
