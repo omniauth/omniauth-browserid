@@ -22,7 +22,7 @@ module OmniAuth
       end
 
       def failure_path
-        options[:failure_path] || "#{path_prefix}/failure"
+        options[:failure_path] || "#{path_prefix}/redirect_failure"
       end
 
       def request_phase
